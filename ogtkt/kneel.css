@@ -1,0 +1,74 @@
+:root {
+    --bodyfont: 'Crimson Text', serif;
+    --eliascolor: #322a60;
+    --monroecolor: #d35400;
+    --fontcolor: #000000;
+    --backgroundcolor: #fffcee;
+    --changercolor: #f22613;
+}
+
+@font-face {
+	font-family: OpenDyslexic;
+	font-style: normal;
+	font-weight: 400;
+	src: local("OpenDyslexic"), local("OpenDyslexic-Regular"), url(ogtkt/opendyslexic/opendyslexic.woff2) format("woff2");
+}
+
+.dyslexic {
+    font-family: 'OpenDyslexic' !IMPORTANT;
+    font-size: 16px;
+}
+
+body {
+    background-image: url('ogtkt/paper.png');
+    color: var(--fontcolor);
+    background-color: var(--backgroundcolor);
+    font-size: 18px;
+    font-family: var(--bodyfont);
+
+}
+
+.story {
+    width: 55%;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+.elias {
+    color: var(--eliascolor);
+}
+
+.monroe {
+    color: var(--monroecolor);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#changer {
+    padding: 0;
+    color: var(--changercolor); 
+}
+
+/* divider credit to Tomas Theunissen*/
+
+
+.divider {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: var(--eliascolor);
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+.divider:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: var(--eliascolor);
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}

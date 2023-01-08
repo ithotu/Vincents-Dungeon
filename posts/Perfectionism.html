@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vincent's Dungeon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="posts.css" />
+  <link href="alfarn/alfarn.css" rel="stylesheet" />
+  <link href="real-text-pro/real-text-pro.css" rel="stylesheet" />
+
+  <link rel="icon" href="favicon.png">
+</head>
+<body>
+<div class="blogpage">
+  <h1 class="title">Perfectionism</h1>
+  <h3 class="date">Undated</h3>
+  <hr />
+  <div class="content">
+    <p>I've been struggling a lot with maintaining a website.</p>
+    <p>This may seem counter-intuitive to the fact that I've been constantly updating and posting probably more often than I ever have, but it's been getting harder and harder. I try to make pages quickly, these days. Otherwise, I will never publish something. I struggle a lot with perfectionism, always have, and have always operated under the mentality that I'd rather not publish something if it has any flaws.</p>
+    <p>This website has been an effort to move away from that mentality, to just create a space where I throw shit at the wall and see what sticks. I make pages in an hour or two and upload them because the information that I want on them is there, and they're at least semi-functional.</p>
+    <p>Recently, though, I've been feeling very self conscious about this aspect of my webspace. It seems like I am surrounded by well-manicured websites that are much flashier and better designed than my own.</p>
+    <p>This is not a dig at those people. I'm happy for them. It just also makes me self conscious in a way that I haven't experienced in a long time.</p>
+    <p>I just feel less than, I guess. I feel like I am doing this wrong.</p>
+    <p>This is more of a quick vent than anything, I guess. Just feeling like re-doing my entire website again. Is it ever enough for me, though?</p>
+    <p style="text-align:center;"><a href="https://vincentsdungeon.com/blog.html">Go home?</a></p>  
+</div>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+</body>
+<script>
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
+</script>
+</html>

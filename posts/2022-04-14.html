@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vincent's Dungeon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="posts.css" />
+  <link href="alfarn/alfarn.css" rel="stylesheet" />
+  <link href="real-text-pro/real-text-pro.css" rel="stylesheet" />
+
+  <link rel="icon" href="favicon.png">
+</head>
+<body>
+<div class="blogpage">
+  <h1 class="title">First Post</h1>
+  <h3 class="date">April 14th, 2022</h3>
+  <hr />
+  <div class="content">
+    <p>This is my first official blog post, though it may be a few days before my website actually goes up. In general, my day was fairly boring. Work was incredibly slow and I ended up dipping about half an hour early because I was going stir crazy. </p>
+    <p>I'm excited for my weekend though (I don't have class or work on Fridays, lucky me!). Probably going to take the time to read and work on this website more after I clean on Friday. I <i>really</i> need to clean my room, it's a bit of a pig sty at the moment.</p>
+    <p>I also have some final papers to work on that I will make sure to work on this weekend so I'm at least a little bit caught up. I'm not too worried about finals, they'll be easy since they're all based on previous works in the classes but they're pretty long assignments. </p>
+    <p><span id="xterm">Song</span>: Thick as a Brick by Jethro Tull (if you count it as one song...) <br />
+    <span id="xterm">Quote</span>: "The Poet and the Painter casting shadows on the water as the sun plays on the infantry returning from the sea..." - Thick as a Brick by Jethro Tull <br />
+    <span id="xterm">Mood</span>: Determined >:D </p>
+    <p style="text-align:center;"><a href="https://vincentsdungeon.com/blog.html">Go home?</a></p>  
+</div>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+</body>
+<script>
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
+</script>
+</html>

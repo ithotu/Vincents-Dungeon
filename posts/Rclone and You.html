@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vincent's Dungeon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="posts.css" />
+  <link href="alfarn/alfarn.css" rel="stylesheet" />
+  <link href="real-text-pro/real-text-pro.css" rel="stylesheet" />
+
+  <link rel="icon" href="favicon.png">
+</head>
+<style>
+    img {
+        max-width: 80%;
+    }
+</style>
+<body>
+<div class="blogpage">
+  <h1 class="title">Rclone and You: Neocities Backups</h1>
+  <h3 class="date">Undated</h3>
+  <hr />
+  <div class="content">
+    <p><em>Important Notes:</em> I use Arch Linux, specifically Endeavour OS. YMMV on other distros, and I have no idea how to do this on Windows or Mac.</p>
+    <p>So, if you're like me, you may often be beset by sudden ennui and want to remake your entire website. This sucks, though, because you may regret this and want to go back but find yourself unable to do so. So, you should create a backup first.</p>
+    <p>However, creating backups may be difficult. Webdav can be a slow pain in the ass, and your website may be too big to download it directly from Neocities. What then?</p>
+    <h2>Rclone</h2>
+    <a href="https://rclone.org/">The official Rclone website</a>
+    <p>If you're comfortable with your command line and want to make a backup, you may be interested in Rclone. It's a fairly simple set up process that I will guide you through here.</p>
+    <p><em>!!!NOTE!!!</em> Rclone does require you to be able to use webdav to work, and as such requires you to be a supporter.</p>
+    <h3>STEP ONE: Download Rclone</h3>
+    <p>Download Rclone following the instructions on their <a href="https://rclone.org/downloads/">downloads page.</a></p>
+    <p>In my case, Rclone is <a href="https://archlinux.org/packages/community/x86_64/rclone/">available as an Arch package.</a></p>
+    <h3>STEP TWO: Connecting Rclone to Neocities</h3>
+    <p>From here, we're going to be in the command line.</p>
+    <p>The first command you want to run is 'rclone config'</p>
+    <figure>
+        <img src="postimg/rcloneconfig.png" Alt="A screenshot of a terminal window showing the rclone config command.">
+        <figcaption>Yours should look very similar, except that "current remotes" table should be empty for you if you have never used rclone before. </figcaption>
+    </figure>
+    <p>From here, you're going to enter "n" to create a new remote.</p>
+    <p>The first prompt should be for you to name this remote. This remote name doesn't matter and is just for your own convenience. For the purposes of this tutorial, I'll name my remote 'Tutorial'.</p>
+    <p>After you enter this name, you're going to get a giant wall of text asking you what type of storage you're using. <em>Select option 45, Webdav.</em></p>
+    <figure>
+        <img src="postimg/webdav.png" Alt="A screenshot of a terminal window showing the options for this command.">
+        <figcaption>The list is ordered alphabetically, which means you shouldn't have to scroll to find webdav.</figcaption>
+    </figure>
+    <p>Next, you're going to see that it is asking you for a url of a host. You will enter https://neocities.org/webdav.</p>
+    <p>You do <em>NOT</em> need the dav: before this url to make this work. If you copy and paste the entire line from the neocities page for webdav, you will run into an error. Use JUST the url.</p>
+    <figure>
+        <img src="postimg/host.png" Alt="A screenshot of a terminal window showing how to enter the host URL for rclone">
+    </figure>
+    <p>Next screen you see is going to be asking for a vendor. Just press enter, there's nothing to input here.</p>
+    <figure>
+        <img src="postimg/vendor.png" Alt="A screenshot of a terminal window showing the options for vendor.">
+        <figcaption>This screen isn't relevant to what we're doing.</figcaption>
+    </figure>
+    <p>The next screen is going to ask for your username: Enter your main neocities username.</p>
+    <p>After this, it will ask for your password.</p> 
+        <figure>
+            <img src="postimg/password.png" Alt="A screenshot of a terminal window asking for options to enter a password.">
+        </figure>
+    <p>Do <em>NOT</em> use the default option. Make sure you enter <em>Y</em> and type in your own password. The password you type in will be your neocities password.</p>
+    <p>After you enter and confirm your password, the next screen will ask you for a bearer_token. This isn't relevant, leave this screen blank and move on.</p>
+    <p>If you're familiar with this program and want to use the advanced config option in the next step, feel free. Otherwise, it isn't important. Skip this.</p>
+    <figure>
+        <img src="postimg/complete.png" Alt="A screenshot of a terminal window showing the completion screen for the rclone config.">
+    </figure>
+    <p>If you see this screen, congrats! You're done. Save this remote by pressing enter (saving is the default command) and exit the config.</p>
+    <h3>STEP THREE: Making the Backup</h3>
+    <p>Now that you're done with the config, the next part is easy. You need to use the rclone copy command.</p>
+    <p>The rclone copy command works as such:</p>
+    <code>rclone copy source:path dest:path</code>
+    <p>The source path is going to be the remote you set up. Use the name of the remote <em>making sure to add a colon after the name.</em></p>
+    <p>The destination path is your choice. For this example, I'll be saving everything into my downloads folder in a folder called "Neocities_Backup"</p>
+    <p>Using the criteria above, my version of the command will look like this:</p>
+    <code>rclone copy tutorial: Downloads/Neocities_Backup</code>
+    <figure>
+        <img src="postimg/cmd.png" Alt="A screenshot of a terminal window showing how I will backup my neocities using rclone.">
+    </figure>
+    <p>Press enter. If you don't see anything in your terminal window, <em>This is good.</em> If everything is working smoothly, it should be running silently and not throwing out any messages into the terminal.</p>
+    <p>If you want to check on things, go to the destination where you're copying your files. You should notice a new folder under the name that you specified in the dest part of your rclone command.</p>
+    <figure>
+        <img src="postimg/downloads.png" Alt="A screenshot of my Downloads folder, showing a folder called 'Neocities_Backup'">
+    </figure>
+    <p>As you can see, the folder is there! Looking inside, you can see files being added as rclone copies your files over.</p>
+    <p>At this point, you just need to wait. Do <em>not</em> close your terminal window until the process is done. The best way to tell its done is that it will let you input commands into the terminal window again rather than just having a blank line underneath your previous command.</p>
+    <figure>
+        <img src="postimg/done.png" Alt="A screenshot of my terminal window, showing the rclone process is done.">
+        <figcaption>Instead of just a blank line underneath the rclone copy command, you can see that my cursor is back as well as my username and device name.</figcaption>
+    </figure>
+    <p>Once the process is done, check the folder that rclone created. Everything from your Neocities directory should be in there. Congratulations! If you need any help, feel free to leave a comment and I'll try to help you troubleshoot anything that went wrong.</p>
+    <p style="text-align:center;"><a href="https://vincentsdungeon.com/blog.html">Go home?</a></p>  
+</div>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+</body>
+<script>
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
+</script>
+</html>

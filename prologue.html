@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="ogtkt/kneel.css" type="text/css" rel="stylesheet" id="theme-link" />
+  <link href="ogtkt/opendyslexic/opendyslexic.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <title>Other Gods to Kneel To</title>
+</head>
+
+<body id="fontswitch">
+  <div class="story">
+    <h1>0</h1>
+    <h2>Prologue</h2>
+    <hr class="divider" />
+    <p style="text-align: center; margin-top: -1em">
+      <a id="changer" class="btn-toggle" title="Dark/Light Mode Toggle">Click Here to Toggle Dark/Light Mode</a>
+    </p>
+    <p style="text-align: center;">
+      <a id="changer" class="font-toggle" title="Font Toggle">Click Here to Toggle Dyslexia Friendly Font</a>
+    </p>
+    <p>The night sky would have been beautiful in anyone elses&rsquo; eyes.</p>
+
+<p>For Elias, it was nothing more than cover. His attention focused on the sounds that his shoes made in the wet grass and how it rang like a church bell underneath his feet. <i class="elias">Stress,</i> he thought as he approached the stone wall before him, <i class="elias">can distort your perception.</i> Despite this mantra, his heart rate remained rapid. He was here now. The wall that surrounded Hawkswatch.</p>
+
+<p>He put the tip of his boot against the rock, feeling for a foothold. When he found none, he pooled his energy at the bottom of his feet and stepped once more. This time, he pushed energy out in small spikes just as he touched stone and allowed it to stick into the mortar that had softened with time and wear. Perfect. Now, he had hold. While he did not allow himself to feel things such as pride, he couldn&rsquo;t help but imagine what would happen if another one of the mages had been sent for this task. Turned back by now. Gave up.</p>
+
+<p>Elias was not going to do that. His handler had given him a task: Get inside the city, behind enemy lines, and kill whoever he could without being caught. The physical stress of climbing was pleasurable compared to what would happen if he came back empty handed.</p>
+
+<p>A final burst of energy at his heels helped him push himself over the lip and into a walkway. From this vantage point, Elias saw the faint glow of his enemies&rsquo; torches. The siege. His target. He lept from the wall onto a nearby roof.</p>
+
+<p>No archers nearby, judging by the lack of light in the towers that marked the corners of Hawkswatch. Metal rattled beneath him as soldiers marched the empty streets in search of people like Elias, those who dared sneak in.</p>
+
+<p><i class="elias">Pairs,</i> Elias thought as he saw two figures turn a corner and walk down the street that he was above. If he killed one of a pair, the other would hunt him with a houndlike fixation. Kill both, it may take too long for anyone to find the bodies.</p>
+
+<p>&ldquo;It&rsquo;s not just a matter of reducing numbers,&rdquo; Handler Auclair had said while giving Elias the assignment, &ldquo;but one of psychological war.&rdquo;</p>
+
+<p>The plan was lost on Elias at first. Death was something to be used to, particularly in war, and to get emotional over it felt like crying over the sun rising or the wind blowing. In the end, he let the soldiers leave his sight. Another target, then. One more suitable. He continued along the rooftops with magic at his heels to make each jump all the more secure, watching as the patrols around him remained clueless to the man above them. They had expected the army, knights and archers, a brutish and physical fight that ended only when one was dead or everyone had lost the strength to even hold a sword or pull a bowstring.</p>
+
+<p>They hadn&rsquo;t expected the mages.</p>
+
+<p>Closer to the siege now, voices began to make their way up to Elias&rsquo; ears and soon he could make out snippets of conversation. Some was about the army waiting outside of their doorstep, but most was about pointless things. One man with a voice heightened by fear and mead was telling a story about an innkeeper&rsquo;s daughter. Another seemed insistent that their partner was cheating them at cards.</p>
+
+<p>A perfect place to start. Pick one from the group and animal instinct would take over. There would be no logic to find the killer. Just chaos. Just fear.</p>
+
+<p>Gather and throw. A phrase forced into his mind through years of training. Gather and throw. A drumbeat.</p>
+
+<p>Gather.</p>
+
+<p>Pain. He looked down to see an arrow had pierced right underneath his ribcage. Right where he had been pulling the energy to attack. His spell fizzled. All of his lessons to tolerate pain failed him in that moment. It wasn&rsquo;t the same, he learned, as a skirmish with your peers. The pain was real, and terrible, and their aim had been so true that even the magic he had been using to keep steady on the roof failed in an instant. If he survived this, he was going to be without magic.</p>
+
+<p><i class="elias">My handler is going to be so disappointed,</i> he thought as he fell forward into the crowd below.</p>
+<div style="margin:0 auto;text-align:center;" class="navigation"><a href="https://vincentsdungeon.com/writing">home</a></div>
+  </div>
+  
+</body>
+<script>
+  const btn = document.querySelector(".btn-toggle");
+  const theme = document.querySelector("#theme-link");
+  btn.addEventListener("click", function () {
+    if (theme.getAttribute("href") == "ogtkt/kneel.css") {
+      theme.href = "ogtkt/darkkneel.css";
+    } else {
+      theme.href = "ogtkt/kneel.css";
+    }
+  });
+
+var element = document.getElementById('fontswitch');
+const trigger = document.querySelector(".font-toggle");
+
+trigger.addEventListener('click', function(e) {
+    e.preventDefault();
+    element.classList.toggle('dyslexic'); // or whatever your active class is
+});
+</script>
+
+</html>

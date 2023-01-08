@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vincent's Dungeon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="posts.css" />
+  <link href="alfarn/alfarn.css" rel="stylesheet" />
+  <link href="real-text-pro/real-text-pro.css" rel="stylesheet" />
+
+  <link rel="icon" href="favicon.png">
+</head>
+<body>
+<div class="blogpage">
+  <h1 class="title">2022-04-15</h1>
+  <h3 class="date">April 15th, 2022</h3>
+  <hr />
+  <div class="content">
+    <p>Today has not been... awesome. Mostly just really anxious and stressed for some reason and I'm not entirely sure why. I mean, I know a little bit of why, but at least I'm solving that issue. I've been having these weird dizzy spells lately though which are really stressing me out. Probably should go to a doctor soon for that... not normal. Anyways, though, it's only friday so my weekend has time to not be absolutely terrible. Hopefully. </p>
+    <p>Other than that, things have been really boring. Mostly been playing cookie clicker and napping. I have this new program on my laptop which makes it really easy for me to make these relaxing soundscapes so I've been using that to nap. That and Northernlion videos on really low volume, anyways.</p>
+    <p><span id="xterm">Song</span>: Zero by The Smashing Pumpkins <br />
+    <span id="xterm">Quote</span>: "I'm your lover, I'm your zero, I'm the face in your dreams of glass..." - Zero by The Smashing Pumpkins <br />
+    <span id="xterm">Mood</span>: Anxious :\</p>
+
+    <p style="text-align:center;"><a href="https://vincentsdungeon.com/blog.html">Go home?</a></p>  
+</div>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+</body>
+<script>
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
+</script>
+</html>

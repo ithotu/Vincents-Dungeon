@@ -1,0 +1,99 @@
+body {
+    background-image: url('catcolors.gif');
+    font-family: 'CatCafe';
+    
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 3.5em;
+    margin-bottom: 0;
+    text-shadow: 6px 0px 0px #FFFFFF;}
+
+h2 {
+    font-size: 2em;  
+    text-shadow: 6px 0px 0px #FFFFFF;}
+
+#picrews img{
+    width: 26em;
+}
+
+#info {
+    text-align: center;
+}
+
+.charsheet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.circles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#bodycolor {
+    margin: 0;
+    margin-right: 1em;
+    padding: 0;
+    border-radius: 50%;
+    height: 6em;
+    width: 6em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #262222;
+}
+
+#eyecolor {
+    margin: 0;
+    margin-right: 1em;
+    padding: 0;
+    border-radius: 50%;
+    height: 6em;
+    width: 6em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: #A0B0BF;
+}
+
+
+#accentcolor {
+    margin: 0;
+    margin-right: 1em;
+    padding: 0;
+    border-radius: 50%;
+    height: 6em;
+    width: 6em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color:  #FFFDFD;
+}
+
+#beancolor {
+    margin: 0;
+    margin-right: 1em;
+    padding: 0;
+    border-radius: 50%;
+    height: 6em;
+    width: 6em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: #F1BCBC;
+}

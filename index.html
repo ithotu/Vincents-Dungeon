@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Vincent's Dungeon</title>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="alfarn/alfarn.css" rel="stylesheet" />
+    <link href="real-text-pro/real-text-pro.css" rel="stylesheet" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="icon" href="img/favicon.png" />
+  </head>
+  <style>
+    /*
+
+The title of the feed is displayed in a <h3> tag, with the class feed-title.
+The feed description is displayed in a <p> tag, with the class feed-desc.
+The feed icon is displayed in an <img> tag, with the class feed-title-image.
+Each feed item title is displayed in a <h4> tag, with the class feed-item-title.
+Each feed item description is displayed in a <p> tag, with the class feed-item-desc. 
+
+*/
+
+    #rssfeed {
+      width: 45%;
+      text-align: center;
+      margin: 0 auto;
+      background-color: var(--fg);
+      padding: 1em;
+      overflow-y: scroll;
+      border: 0.3em solid var(--pink);
+      max-height: 150px;
+    }
+
+    #rssfeed a {
+      color: var(--bg-darker);
+    }
+
+    .feed-title {
+      visibility: hidden;
+      position: relative;
+    }
+
+    .feed-title:after {
+      visibility: visible;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      content: "BLOG POSTS";
+      font-size: 1.25em;
+      color: var(--bg);
+    }
+
+    .feed-item-title {
+      margin-top: 3em;
+      font-family: "Real Text Pro";
+    }
+
+    a[href="https://rss.bloople.net/"]
+    {
+      display: none;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="header">
+        <h1>VINCENT'S DUNGEON</h1>
+        <nav>
+          <div class="links">
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="links.html">LINKS</a></li>
+              <li><a href="blog.html">BLOG</a></li>
+              <li><a href="writing.html">WRITING</a></li>
+              <li><a href="">PHOTOGRAPHY</a></li>
+              <li><a href="misc.html">MISC</a></li>
+            </ul>
+          </div>
+        </nav>
+        <hr />
+      </div>
+    </header>
+    <main>
+      <div id="mainpage">
+        <p>Vincent&#39;s Dungeon is a personal webzone.</p>
+
+        <p>
+          I&#39;ve been playing with HTML for over a decade, first in elementary
+          school, then with Tumblr, and now here. This site has been through
+          several redesigns that, at time of writing, are not catalogued
+          anywhere. I will put them somewhere for history&#39;s sake, though.
+        </p>
+
+        <p>
+          This site is my attempt to create a space for myself unbound by the
+          restraints of modern social media. Everything on this site is by me,
+          for me.
+        </p>
+
+        <p style="margin-bottom: 5%">
+          As such, I should note that <strong>this site is 18+.</strong> I talk
+          about sexual topics and I am not joking when I call myself a
+          degenerate. You&#39;ve been warned.
+        </p>
+        <div id="rssfeed">
+          <script src="//rss.bloople.net/?url=https%3A%2F%2Fvincentsdungeon.com%2Ffeed.xml&showtitle=false&showicon=true&type=js"></script>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

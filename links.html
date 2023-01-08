@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Vincent's Dungeon</title>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="alfarn/alfarn.css" rel="stylesheet" />
+    <link href="real-text-pro/real-text-pro.css" rel="stylesheet" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="img/favicon.png" />
+  </head>
+  <style>
+    #myBtn {
+      display: none; /* Hidden by default */
+      position: fixed; /* Fixed/sticky position */
+      bottom: 20px; /* Place the button at the bottom of the page */
+      right: 30px; /* Place the button 30px from the right */
+      z-index: 99; /* Make sure it does not overlap */
+      border: none; /* Remove borders */
+      outline: none; /* Remove outline */
+      background-color: var(--blue); /* Set a background color */
+      color: var(--bg); /* Text color */
+      cursor: pointer; /* Add a mouse pointer on hover */
+      padding: 15px; /* Some padding */
+      border-radius: 10px; /* Rounded corners */
+      font-size: 18px; /* Increase font size */
+    }
+
+    .navlinks {
+      list-style-type: none;
+      padding: 4px;
+      text-transform: uppercase;
+    }
+
+    .link a {
+      color: var(--pink);
+      background: none;
+    }
+
+    .link a:hover {
+      color: var(--blue);
+    }
+
+    .link li {
+      line-height: 1.75em;
+      text-transform: uppercase;
+      padding: 0.25em;
+    }
+
+    .navlinks a {
+      color: var(--blue);
+      text-decoration: none;
+      line-height: 1.25em;
+    }
+
+    h3 {
+      color: var(--text);
+      line-height: 1.75em;
+      font-size: 1.8em;
+    }
+  </style>
+
+  <body>
+    <header>
+      <div class="header">
+        <h1>VINCENT'S DUNGEON</h1>
+        <nav>
+          <div class="links">
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="links.html">LINKS</a></li>
+              <li><a href="blog.html">BLOG</a></li>
+              <li><a href="writing.html">WRITING</a></li>
+              <li><a href="">PHOTOGRAPHY</a></li>
+              <li><a href="misc.html">MISC</a></li>
+            </ul>
+          </div>
+        </nav>
+        <hr />
+      </div>
+    </header>
+    <main>
+      <div id="linkspage">
+        <ul>
+          <h3>NAVIGATE</h3>
+          <li class="navlinks"><a href="#my-site">My Website's Links</a></li>
+          <li class="navlinks">
+            <a href="#education">Educational Resources</a>
+          </li>
+          <li class="navlinks"><a href="#web">Web Resources</a></li>
+          <li class="navlinks"><a href="#ttrpg">TTRPG Resources</a></li>
+          <li class="navlinks"><a href="#misc">Miscellaneous</a></li>
+        </ul>
+        <ul class="link">
+          <h3 id="my-site">My Site</h3>
+          <li>
+            <a href="https://vincentsdungeon.123guestbook.com/">guestbook</a>
+          </li>
+          <li><a href="/greatest-shits">greatest shits</a></li>
+          <li><a href="/fursona">my fursona</a></li>
+
+          <h3 id="education">Education</h3>
+          <li>
+            <a
+              href="https://github.com/codecrafters-io/build-your-own-x"
+              target="_blank"
+              >build your own x</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/spreadsheets/d/13K4UzNKjovhAq9G3sBJB5VaIFELp5c1Rfgp4pSk6ERM/htmlview"
+              target="_blank"
+              >Titles on Ukraine/Russia</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Developer-Y/cs-video-courses"
+              target="_blank"
+              >Computer Science Video Courses</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://network.bepress.com/arts-and-humanities/music/"
+              target="_blank"
+              >Open Access Database of Music Related Articles</a
+            >
+          </li>
+          <li>
+            <a href="http://openhumanitiespress.org/" target="_blank"
+              >Open Access Texts about Humanities</a
+            >
+          </li>
+          <li>
+            <a href="http://openmusictheory.com/" target="_blank"
+              >Open Access Music Theory Textbook</a
+            >
+          </li>
+          <li>
+            <a href="http://www.americanyawp.com" target="_blank"
+              >American Yawp, a collaborative open access American History
+              textbook</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://www.openculture.com/free_k-12_educational_resources"
+              target="_blank"
+              >Free K/12 Educational Resources</a
+            >
+          </li>
+          <li>
+            <a href="https://learninglab.si.edu" target="_blank"
+              >Educational Resources from The Smithsonian</a
+            >
+          </li>
+          <li>
+            <a href="https://libretexts.org/" target="_blank"
+              >Libretexts, A Website For Open Access Textbooks</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://community.simplek12.com/scripts/student/catalog.asp"
+              target="_blank"
+              >Free Webinars for Teachers</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://digital.library.ucla.edu/sheetmusic/"
+              target="_blank"
+              >UCLA's Collection of Sheet Music</a
+            >
+          </li>
+          <li>
+            <a href="https://directory.doabooks.org" target="_blank"
+              >The Directory of Open Access Books</a
+            >
+          </li>
+          <li>
+            <a href="https://libguides.ferman.edu/oer/home" target="_blank"
+              >Furman University's Collection of Open Educational Resources</a
+            >
+          </li>
+          <li>
+            <a href="https://library.oapen.org" target="_blank"
+              >OAPEN, Open Access Publishing in European Networks</a
+            >
+          </li>
+          <li>
+            <a href="https://milneopentextbooks.org/" target="_blank"
+              >Milne Library's Open Textbooks</a
+            >
+          </li>
+          <li>
+            <a href="https://musopen.org/" target="_blank"
+              >Open Access Sheet Music</a
+            >
+          </li>
+          <li>
+            <a href="oasis.geneseo.edu/" target="_blank"
+              >OASIS, Openly Available Sources Integrated Search</a
+            >
+          </li>
+          <li>
+            <a href="https;//open.bccampus.ca" target="_blank"
+              >B.C. Campus Open Educational Resources</a
+            >
+          </li>
+          <li>
+            <a href="https://open.umich.edu" target="_blank"
+              >University of Michigan Open Educational Resources</a
+            >
+          </li>
+          <li>
+            <a href="https://opensocialwork.org/textbooks/" target="_blank"
+              >Open Textbooks for Social Work</a
+            >
+          </li>
+          <li>
+            <a href="https://openstax.org" target="_blank"
+              >Openstax, one of the largest providers of open source/open access
+              textbooks</a
+            >
+          </li>
+          <li>
+            <a href="https://smarthistory.org" target="_blank"
+              >The Center for Public Art History
+            </a>
+          </li>
+          <li>
+            <a href="https://worldimages.sjsu.edu/" target="_blank"
+              >Educational Images under a Creative Commons
+              Attribution-Noncommercial 2.5 License</a
+            >
+          </li>
+          <li>
+            <a href="https://writingcommons.org/" target="_blank"
+              >Writing Commons, An Open Educational Resource for Writers</a
+            >
+          </li>
+          <li>
+            <a href="https://aupress.ca" target="_blank"
+              >Athabasca University Press' Open Access Books</a
+            >
+          </li>
+          <li>
+            <a href="https://guggenheim.org/collection-online" target="_blank"
+              >The Guggenheim's Online Collection</a
+            >
+          </li>
+          <li>
+            <a href="https://www.gutenberg.org/" target="_blank"
+              >Project Gutenberg</a
+            >
+          </li>
+          <li>
+            <a href="https://intechopen.com" target="_blank"
+              >Intechopen, A Pubilsher of Open Access Books</a
+            >
+          </li>
+          <li>
+            <a href="https://merlot.org" target="_blank"
+              >Merlot, A curated selection of online educational materials</a
+            >
+          </li>
+          <li>
+            <a href="https://mutopiaproject.org/" target="_blank"
+              >Mutopia Project, Public Domain/Creative Commons Music</a
+            >
+          </li>
+          <li>
+            <a href="https://oercommons.org" target="_blank"
+              >OER Commons, A Digital Library of Open Educational Resources</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://libary.louisville.edu/ekstrom/oer/home"
+              target="_blank"
+              >University of Louisville's Open Educational Resourcse Page</a
+            >
+          </li>
+          <li>
+            <a href="https://openculture.com" target="_blank"
+              >Open Culture, A Website With Open/Free Educational Resources in
+              Several Fields</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.about.jstor.org/revealdigital/independent-voices/"
+              target="_blank"
+              >Independent Voices: Open Source Collection of LGBT+ Publications
+              from the 50s to the 90s</a
+            >
+          </li>
+          <li>
+            <a href="https://punctumbooks.com" target="_blank"
+              >Punctum Books, An Indepdent Open Access Publisher</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://muse.jhu.edu/search?action=oa_browse"
+              target="_blank"
+              >Open Access Content on Project Muse</a
+            >
+          </li>
+          <li>
+            <a href="https://monoskop.org/monoskop_log" target="_blank"
+              >Monoskop Log, an art/art history based wiki</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.metmuseum.org/art/metpublications/titles-with-full-text-online?searchtype=F"
+              >Full Books from the MET</a
+            >
+          </li>
+          <h3 id="web">Web Resources</h3>
+          <li>
+            <a href="https://blog.itsnero.com/webguide"
+              >The Quick 'n' Dirty Guide to Making a Website</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/dexteryy/spellbook-of-modern-webdev"
+              >Spellbook of Modern Web Dev - A Big Picture, Thesaurus, and
+              Taxonomy of Modern JavaScript Web Development</a
+            >
+          </li>
+          <li>
+            <a href="https://badnoise.net/TypeRip/"
+              >TypeRip - Download Adobe Fonts (For Free!)</a
+            >
+          </li>
+          <li>
+            <a href="https://rodfireproductions.itch.io/deadlogs"
+              >DeadLogs - Static Site/Blog Tool Similar to Zonelets</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://onlineasciitools.com/convert-text-to-ascii-art"
+              target="_blank"
+              >Text to Ascii Art</a
+            >
+          </li>
+          <li>
+            <a href="https://freecodecamp.org/" target="_blank"
+              >Freecodecamp, a website to learn code and earn certifications</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/sindresorhus/awesome" target="_blank"
+              >hThe Awesome Collections, curated lists of resources with a focus
+              on webdev</a
+            >
+          </li>
+          <li>
+            <a href="https://links.yesterweb.org" target="_blank"
+              >Yesterweb Links Aggregator, filters for topics including web
+              dev</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/bradtraversy/design-resources-for-developers"
+              target="_blank"
+              >Design Resources for Web Developers</a
+            >
+          </li>
+          <li>
+            <a href="https://switching.software" target="_blank"
+              >Find Privacy Conscious/Open Source Alternatives to Popular
+              Programs</a
+            >
+          </li>
+          <li>
+            <a href="https://typographyhandbook.com/" target="_blank"
+              >The Typography Handbook</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://digitalally.com/open-source-accessibility-tools/"
+              target="_blank"
+              >Open Source Accessibility Tools</a
+            >
+          </li>
+          <li>
+            <a href="https://osp.kitchen/foundry/#" target="_blank"
+              >Open Source Publishing's Fonts</a
+            >
+          </li>
+          <li>
+            <a href="https://digitalally.com/accessibility-cheat-sheets"
+              >Accessibility Cheat Sheets</a
+            >
+          </li>
+          <li>
+            <a href="https://int10h.org/oldschool-pc-fonts/"
+              >The Ultimate Oldschool PC Font Collection</a
+            >
+          </li>
+          <li><a href="https://htmlboilerplates.com/">HTML Boilerplates</a></li>
+          <li>
+            <a href="https://edabit.com/challenges">"Duolingo For Coding""</a>
+          </li>
+          <li>
+            <a href="https://intab.io/resources/">Curated Web Dev Tools</a>
+          </li>
+          <li>
+            <a href="https://irys.cc/fronters/embed">Pluralkit Site Embed</a>
+          </li>
+          <!-- <li><a href="https://drive.google.com/drive/folders/1-8VoM1ogXFrO5UPgB4VISZQ1REDP83W4">https://drive.google.com/drive/folders/1-8VoM1ogXFrO5UPgB4VISZQ1REDP83W4</a></li>
+        <li><a href="https://trans-axolotl.tumblr.com/post/674778758200344576/alternatives-to-harmful-crisis-lines">https://trans-axolotl.tumblr.com/post/674778758200344576/alternatives-to-harmful-crisis-lines</a></li>
+        <li><a href="https://philome.la/jace_harr/you-feel-like-shit-an-interactive-self-care-guide/play/index">https://philome.la/jace_harr/you-feel-like-shit-an-interactive-self-care-guide/play/index.html</a></li>
+        <li><a href="https://vincentsdungeon.com/pdfs/anxiety-information-sheet-01-what-is-anxiety.pdf">https://vincentsdungeon.com/pdfs/anxiety-information-sheet-01-what-is-anxiety.pdf</a></li>
+        <li><a href="https://vincentsdungeon.com/pdfs/Anxiety-Information-Sheet-03-Breathing-Retraining.pdf" target="_blank">https://vincentsdungeon.com/pdfs/Anxiety-Information-Sheet-03-Breathing-Retraining.pdf</a></li>
+        <li><a href="https://vincentsdungeon.com/pdfs/Anxiety-Information-Sheet-04-Progressive-Muscle-Relaxation.pd" target="">https://vincentsdungeon.com/pdfs/Anxiety-Information-Sheet-04-Progressive-Muscle-Relaxation.pdf</a></li>
+        <li><a href="https://vincentsdungeon.com/pdfs/DBT-skills-workbook-Chapter-1.pdf" target="_blank">https://vincentsdungeon.com/pdfs/DBT-skills-workbook-Chapter-1.pdf</a></li>
+        <li><a href="https://vincentsdungeon.com/pdfs/Defusion-Techniques.pdf">https://vincentsdungeon.com/pdfs/Defusion-Techniques.pdf</a></li>
+        <li><a href="https://vincentsdungeon.com/pdfs/FightFlightResponseHandout.pdf" target="_blank">https://vincentsdungeon.com/pdfs/FightFlightResponseHandout.pdf</a></li>
+        <li><a href="https://vincentsdungeon.com/pdfs/Happiness-Trap-Worksheets.pdf" target="_blank">https://vincentsdungeon.com/pdfs/Happiness-Trap-Worksheets.pdf</a></li>
+        <li><a href="https://longreads.com/2022/03/09/becoming-human-again-a-reading-list-for-the-extremely-offline/" target="_blank">https://longreads.com/2022/03/09/becoming-human-again-a-reading-list-for-the-extremely-offline/</a></li>
+        <li><a href="https://docs.google.com/document/d/1Hc4UYuqmPOJcpKswf_yzIAGyOCAWzMVml6GIB5w4spk/edit" target="_blank">https://docs.google.com/document/d/1Hc4UYuqmPOJcpKswf_yzIAGyOCAWzMVml6GIB5w4spk/edit</a></li>
+       -->
+          <h3 id="ttrpg">TTRPG Resources</h3>
+          <li>
+            <a href="https://gummalao.itch.io/racquin-5e" target="_blank"
+              >Racquin 5e - Raccoon Race for 5E</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://of-gods-and-gamemasters.itch.io/the-gods-of-rega-collection"
+              target="_blank"
+              >The Gods of Rega Collection ($6.00) - A fully developed pantheon
+              of 20 gods for fantasy roleplaying</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://evilhat.itch.io/fate-accessibility-toolkit"
+              target="_blank"
+              >Fate Accessibility Toolkit ($7.50)</a
+            >
+          </li>
+          <li>
+            <a href="https://www.drivethrurpg.com/" target="_blank"
+              >Drivethru RPG</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://montecookgames.itch.io/consent-in-gaming"
+              target="_blank"
+              >Content in Gaming</a
+            >
+          </li>
+          <li>
+            <a href="https://koboldplus.club/" target="_blank"
+              >Kobold Fight Club</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://probabletrain.itch.io/dungeon-scrawl"
+              target="_blank"
+              >Dungeon Scrawl</a
+            >
+          </li>
+          <li>
+            <a href="https://5e.tools/dmscreen.html" target="_blank"
+              >5e Tools</a
+            >
+          </li>
+          <li><a href="http://dmheroes.com/" target="_blank">DM Heroes</a></li>
+          <li>
+            <a
+              href="https://katieplaysgames.wordpress.com/2021/05/21/being-an-accessible-gm/"
+              target="_blank"
+              >Being an Accessible GM</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/document/d/1SB0jsx34bWHZWbnNIVVuMjhDkrdFGo1_hSC2BWPlI3A/edit"
+              target="_blank"
+              >The X Card</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://drive.google.com/drive/folders/114jRmhzBpdqkAlhmveis0nmW73qkAZCj"
+              target="_blank"
+              >TTRPG Safety Toolkit</a
+            >
+          </li>
+          <li>
+            <a href="https://eigengrausgenerator.com/" target="_blank"
+              >Open Source Town Generator</a
+            >
+          </li>
+          <h3 id="misc">Miscellaneous</h3>
+          <li>
+            <a
+              href="https://docs.google.com/spreadsheets/d/1H9VYgjZZw9-tjTi7LhbcuRYAvjPsmdP8B8DAqa8biZI/edit#gid=0"
+              >University of Alaska Fairbanks' Free and Open Media
+              Spreadsheet</a
+            >
+          </li>
+          <li><a href="https://iogames.space/" target="_blank">IO Games</a></li>
+          <li>
+            <a
+              href="https://toyhou.se/14383478.visual-content-warning-f2u-"
+              target="_blank"
+              >F2U Visual Content Warnings</a
+            >
+          </li>
+          <li>
+            <a href="https://thirtydollar.website/" target="_blank"
+              >Don't you lecture me with your thirty dollar website!</a
+            >
+          </li>
+          <li>
+            <a href="https://leatherarchives.org/" target="_blank"
+              >Leather Archives & Museums</a
+            >
+          </li>
+          <li>
+            <a href="https://www.cinematerial.com/" target="_blank"
+              >Database for Movie Posters</a
+            >
+          </li>
+          <li>
+            <a href="https://recipe-search.typesense.org/" target="_blank"
+              >Instantly Search 2 Million Recipes</a
+            >
+          </li>
+          <li>
+            <a href="https://talkshowboy.bandcamp.com" target="_blank"
+              >Australia's Best Pop Genius (Nothing but top-notch beatpop
+              quality)</a
+            >
+          </li>
+          <li>
+            <a href="https://www.youtube.com/shorts/8r521exvcyo"
+              >My Favorite Lunchmeats</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/playlist?list=PLj8TWjlT1se6FKQsfSG1TVqnP-4ffuD2f"
+              target="_blank"
+              >Public Domain Films on Youtube</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://letterboxd.com/artsambition/list/disturbing-controversial-shocking-bizarre/"
+              target="_blank"
+              >Fucked Up Movies</a
+            >
+          </li>
+          <li>
+            <a href="https://effedupmovies.com/" target="_blank"
+              >The Website to Watch Fucked Up Movies</a
+            >
+          </li>
+          <li>
+            <a href="https://backwaterreptiles.com/" target="_blank"
+              >Backwater Reptiles, an online store for
+              reptiles/amphibians/insects/arachnids/etc</a
+            >
+          </li>
+          <li>
+            <a href="https://electricliterature.com" target="_blank"
+              >Electric Literature, A Publisher Who Has Interesting Literary
+              Articles</a
+            >
+          </li>
+          <li>
+            <a href="https://allaboutbirds.org/cams/" target="_blank"
+              >Live Bird Cams</a
+            >
+          </li>
+          <li>
+            <a href="https://sparkedhost.com/" target="_blank"
+              >Sparked Host, game/cloud hosting</a
+            >
+          </li>
+          <li>
+            <a href="https://moriyashrine.org/" target="_blank"
+              ><strong>THE</strong> Touhou Source</a
+            >
+          </li>
+          <li>
+            <a href="https://based.cooking/" target="_blank"
+              >Based Cooking, no bullshit recipe site</a
+            >
+          </li>
+          <li>
+            <a href="https://rezuaq.be/new-area/image-creator/" target="_blank"
+              >Fromsoft Image Macro Creator</a
+            >
+          </li>
+        </ul>
+      </div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </main>
+
+    <script>
+      // Get the button:
+      let mybutton = document.getElementById("myBtn");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    </script>
+  </body>
+</html>

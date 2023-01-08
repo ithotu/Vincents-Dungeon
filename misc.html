@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Vincent's Dungeon</title>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="alfarn/alfarn.css" rel="stylesheet" />
+    <link href="real-text-pro/real-text-pro.css" rel="stylesheet" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="icon" href="img/favicon.png" />
+    <style>
+      a {
+        background: none;
+      }
+
+      #miscpg {
+        text-align: center;
+      }
+
+      h2 {
+        color: var(--pink);
+      }
+
+      .centercomb {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 60px;
+      }
+
+      .honeycomb {
+        display: grid;
+        grid-auto-rows: 28px;
+        gap: 30px 18px;
+        padding: 0 32px 56px 0;
+      }
+      .hc-2 {
+        grid-template-columns: repeat(2, 32px);
+      } /*Infinite-length section 2 stamps wide*/
+      .hc-3 {
+        grid-template-columns: repeat(3, 32px);
+      } /*Infinite-length section 3 stamps wide*/
+      .hc-4 {
+        grid-template-columns: repeat(4, 32px);
+      } /*Infinite-length section 4 stamps wide*/
+      .hc-5 {
+        grid-template-columns: repeat(5, 32px);
+      } /*Infinite-length section 5 stamps wide*/
+      .hc-6 {
+        grid-template-columns: repeat(6, 32px);
+      } /*Infinite-length section 6 stamps wide*/
+      .hc-7 {
+        grid-template-columns: repeat(7, 32px);
+      } /*Infinite-length section 7 stamps wide*/
+      .hc-8 {
+        grid-template-columns: repeat(8, 32px);
+      } /*Infinite-length section 8 stamps wide*/
+      .hc-9 {
+        grid-template-columns: repeat(9, 32px);
+      } /*Infinite-length section 9 stamps wide*/
+      .hc-10 {
+        grid-template-columns: repeat(10, 32px);
+      } /*Infinite-length section 10 stamps wide*/
+      .hc-11 {
+        grid-template-columns: repeat(11, 32px);
+      } /*Infinite-length section 11 stamps wide*/
+      .hc-12 {
+        grid-template-columns: repeat(12, 32px);
+      } /*Infinite-length section 12 stamps wide*/
+      .hc-mini {
+        grid-template-columns: repeat(3, 32px);
+        padding-bottom: 28px;
+      } /*Hexagonal group of max 7 stamps*/
+      .hc-hive {
+        grid-template-columns: repeat(7, 32px);
+        padding-bottom: 28px;
+      } /*Oval-shaped group of max 17 stamps*/
+      .hc-2 img:nth-of-type(2n + 1),
+      .hc-4 img:nth-of-type(2n + 1),
+      .hc-6 img:nth-of-type(2n + 1),
+      .hc-8 img:nth-of-type(2n + 1),
+      .hc-10 img:nth-of-type(2n + 1),
+      .hc-12 img:nth-of-type(2n + 1) {
+        margin-top: 28px;
+      }
+      .hc-3 img:nth-of-type(6n + 1),
+      .hc-3 img:nth-of-type(6n + 3),
+      .hc-3 img:nth-of-type(6n + 4),
+      .hc-3 img:nth-of-type(6n) {
+        margin-top: 28px;
+      }
+      .hc-5 img:nth-of-type(10n + 1),
+      .hc-5 img:nth-of-type(10n + 3),
+      .hc-5 img:nth-of-type(10n + 5),
+      .hc-5 img:nth-of-type(10n + 6),
+      .hc-5 img:nth-of-type(10n + 8),
+      .hc-5 img:nth-of-type(10n) {
+        margin-top: 28px;
+      }
+      .hc-7 img:nth-of-type(14n + 1),
+      .hc-7 img:nth-of-type(14n + 3),
+      .hc-7 img:nth-of-type(14n + 5),
+      .hc-7 img:nth-of-type(14n + 7),
+      .hc-7 img:nth-of-type(14n + 8),
+      .hc-7 img:nth-of-type(14n + 10),
+      .hc-7 img:nth-of-type(14n + 12),
+      .hc-7 img:nth-of-type(14n) {
+        margin-top: 28px;
+      }
+      .hc-9 img:nth-of-type(18n + 1),
+      .hc-9 img:nth-of-type(18n + 3),
+      .hc-9 img:nth-of-type(18n + 5),
+      .hc-9 img:nth-of-type(18n + 7),
+      .hc-9 img:nth-of-type(18n + 9),
+      .hc-9 img:nth-of-type(18n + 10),
+      .hc-9 img:nth-of-type(18n + 12),
+      .hc-9 img:nth-of-type(18n + 14),
+      .hc-9 img:nth-of-type(18n + 16),
+      .hc-9 img:nth-of-type(18n) {
+        margin-top: 28px;
+      }
+      .hc-11 img:nth-of-type(22n + 1),
+      .hc-11 img:nth-of-type(22n + 3),
+      .hc-11 img:nth-of-type(22n + 5),
+      .hc-11 img:nth-of-type(22n + 7),
+      .hc-11 img:nth-of-type(22n + 9),
+      .hc-11 img:nth-of-type(22n + 11),
+      .hc-11 img:nth-of-type(22n + 12),
+      .hc-11 img:nth-of-type(22n + 14),
+      .hc-11 img:nth-of-type(22n + 16),
+      .hc-11 img:nth-of-type(22n + 18),
+      .hc-11 img:nth-of-type(22n + 20),
+      .hc-11 img:nth-of-type(22n) {
+        margin-top: 28px;
+      }
+      .hc-mini img:nth-of-type(1),
+      .hc-mini img:nth-of-type(3),
+      .hc-mini img:nth-of-type(4),
+      .hc-mini img:nth-of-type(6) {
+        margin-top: 28px;
+      }
+      .hc-mini img:nth-of-type(7) {
+        grid-area: 3/2;
+      }
+      .hc-hive img:nth-of-type(1),
+      .hc-hive img:nth-of-type(3),
+      .hc-hive img:nth-of-type(5),
+      .hc-hive img:nth-of-type(7),
+      .hc-hive img:nth-of-type(8),
+      .hc-hive img:nth-of-type(10),
+      .hc-hive img:nth-of-type(12),
+      .hc-hive img:nth-of-type(14) {
+        margin-top: 28px;
+      }
+      .hc-hive img:nth-of-type(15) {
+        grid-area: 3/2;
+      }
+      .hc-hive img:nth-of-type(16) {
+        grid-area: 3/4;
+      }
+      .hc-hive img:nth-of-type(17) {
+        grid-area: 3/6;
+      }
+
+      .misc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .yw-widget-full:not(.yw-raw) {
+        text-align: center;
+      }
+
+      #blinkies img {
+        width: 150px;
+        height: 20px;
+        padding: 0;
+        margin: 1px;
+      }
+
+      .blinkierow {
+        padding: 0;
+        margin: 0;
+        font-size: 1px;
+      }
+
+      .stamps img {
+        width: 99px;
+        height: 56px;
+      }
+
+      .stamps {
+        text-align: center;
+      }
+
+      #buttons {
+        text-align: center;
+        font-size: 1px;
+      }
+
+      #buttons img {
+        padding: 0;
+        margin: 1px;
+        width: 88px;
+        height: 31px;
+      }
+
+      #blinkies {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h1>VINCENT'S DUNGEON</h1>
+        <nav>
+          <div class="links">
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="links.html">LINKS</a></li>
+              <li><a href="blog.html">BLOG</a></li>
+              <li><a href="writing.html">WRITING</a></li>
+              <li><a href="">PHOTOGRAPHY</a></li>
+              <li><a href="misc.html">MISC</a></li>
+            </ul>
+          </div>
+        </nav>
+        <hr />
+      </div>
+    </header>
+    <main>
+      <div id="miscpg">
+        <div class="misc">
+          <p><img src="buttons/vd.gif" /></p>
+          <p>Want to link me? Feel free to use this button!</p>
+        </div>
+
+        <h2 style="text-align: center">COOL SITES</h2>
+        <div id="buttons">
+          <p>
+            <a href="https://sharkba1t.neocities.org/home"
+              ><img src="buttons/sharkbait.gif"
+            /></a>
+            <a href="https://beeep.neocities.org"
+              ><img src="buttons/beep.png"
+            /></a>
+            <a href="https://mooeena.neocities.org"
+              ><img src="buttons/mooeena.png"
+            /></a>
+            <a href="https://absentlydepart.neocities.org"
+              ><img src="buttons/absent.gif"
+            /></a>
+            <a href="https://paintkiller.neocities.org/new/links"
+              ><img src="buttons/pantkiller.gif"
+            /></a>
+          </p>
+          <p>
+            <a href="https://slumber.neocities.org/"
+              ><img src="buttons/slumber.gif"
+            /></a>
+            <a href="https://cementgarden.neocities.org/"
+              ><img src="buttons/cement.gif"
+            /></a>
+            <a href="https://vangoggles.com/" target="_blank"
+              ><img src="buttons/van.png"
+            /></a>
+            <a href="https://cvrsed.neocities.org/" target="_blank"
+              ><img src="buttons/cvrse.gif"
+            /></a>
+            <a href="https://uncannyvalley.neocities.org/" target="_blank"
+              ><img src="buttons/uncanny.gif" />
+            </a>
+          </p>
+          <p>
+            <a href="https://teddybear-halo.neocities.org/"
+              ><img src="buttons/teddy.gif"
+            /></a>
+            <a href="https://postlapsarian.neocities.org"
+              ><img src="buttons/madscience.png"
+            /></a>
+            <a href="https://softannalee.neocities.org"
+              ><img src="buttons/anna.gif"
+            /></a>
+            <a href="https://dreamhack.neocities.org"
+              ><img src="buttons/dreamhack.png"
+            /></a>
+            <a href="https://cinni.net"><img src="buttons/cinni.png" /></a>
+          </p>
+          <p>
+            <a href="https://sadgrl.online"><img src="buttons/sadgrl.gif" /></a>
+            <a href="https://koinuko.neocities.org/shipping/webring/joinwebring"
+              ><img
+                src="buttons/selfbutton.gif"
+                style="height: 31px; width: 88px"
+            /></a>
+            <a href="https://runegod.net/"><img src="buttons/runegod.gif" /></a>
+            <a href="https://xandra.cc"><img src="buttons/xandra.png" /></a>
+            <a href="https://whimsical.heartette.net"
+              ><img src="buttons/whimsical.gif"
+            /></a>
+          </p>
+          <p>
+            <a href="https://marzka.cafe"
+              ><img
+                src="buttons/marzka_cafe_88x31.png"
+                width="88"
+                height="31"
+                alt="marzka.cafe badge"
+            /></a>
+            <a href="https://sugarteara.moe/homepage"
+              ><img src="buttons/sugarteara.gif"
+            /></a>
+            <a href="https://pixelglade.net/"
+              ><img src="buttons/pixelglade.gif"
+            /></a>
+            <a href="https://pleurodelinae.neocities.org/"
+              ><img src="buttons/pleur.png"
+            /></a>
+          </p>
+        </div>
+      </div>
+      <h2 style="text-align: center">Webrings</h2>
+      <center>
+        <noscript
+          >Webrings generally require javascript to run, and as such you may not
+          see these properly without javascript. Sorry!</noscript
+        >
+
+        <div
+          class="yw-widget-mini"
+          data-yw-url="https://reanimator.neocities.org"
+        ></div>
+        <script src="https://yesterweb.org/js/widget.js"></script>
+        <br />
+        <br />
+        <center>
+          <script src="https://xandra.cc/safonts/webring.js"></script>
+          <ring-900 site="https://vincentsdungeon.com/"></ring-900>
+        </center>
+
+        <br />
+        <!--START OF SELF INSERT WEBRING-->
+        <div id="selfinsertwebring">
+          <script src="https://koinuko.neocities.org/shipping/webring/tryitscript.js"></script>
+          <body onload="setListNumber(), myFunction()" />
+
+          <!--IN THE SECTION BELOW, PLEASE CHANGE THE 0 (ZERO) TO WHATEVER-->
+          <!--NUMBER YOU WERE ASSIGNED! THANK YOU!  <3-->
+
+          <script>
+            function setListNumber() {
+              positionInList = 61;
+            }
+          </script>
+        </div>
+        <!--END OF SELF INSERT WEBRING-->
+        <br />
+        <div style="text-align:center;display:flex;align-items: center;justify-content: center;" id="ahsc">
+          <script
+            type="text/javascript"
+            src="https://feelingmachine.moe/alterring/onionring-variables.js"
+          ></script>
+
+          <script
+            type="text/javascript"
+            src="https://feelingmachine.moe/alterring/onionring-widget.js"
+          ></script>
+
+          <link
+            rel="stylesheet"
+            href="https://feelingmachine.moe/alterring/onionring.css"
+          />
+        </div>
+      </center>
+      <h2 style="margin-top: 15px; text-align: center">HONEYCOMB STAMPS</h2>
+      <p style="text-align: center">
+        Thank you to
+        <a href="https://mooeena.neocities.org/honeycomb">Mooeena</a> for the
+        templates, code, and stamps! Some stamps made by yours truly.
+      </p>
+      <div class="honeycomb centercomb hc-7">
+        <img src="images/honeycomb/he_him.png" />
+        <img src="images/honeycomb/18_plus.png" />
+        <img src="images/honeycomb/cottagecore_10.png" />
+        <img src="images/honeycomb/transgender.png" />
+        <img src="images/honeycomb/cottagecore_05.png" />
+        <img src="images/honeycomb/music.png" />
+        <img src="images/honeycomb/no_minors.png" />
+        <img src="images/honeycomb/photography.png" />
+        <img src="images/honeycomb/html.png" />
+        <img src="images/honeycomb/proudfur.png" />
+        <img src="images/honeycomb/progress.png" />
+        <img src="images/honeycomb/it_its.png" />
+        <img src="images/honeycomb/adult.png" />
+        <img src="images/honeycomb/adhd.png" />
+        <img src="images/honeycomb/holo_04.png" />
+        <img src="images/honeycomb/cat-boy.png" />
+        <img src="images/honeycomb/pastel_03.png" />
+        <img src="images/honeycomb/nsfw.png" />
+        <img src="images/honeycomb/pastel_06.png" />
+        <img src="images/honeycomb/pastel_01.png" />
+        <img src="images/honeycomb/taurus.png" />
+        <img src="images/honeycomb/cottagecore_02.png" />
+        <img src="images/honeycomb/alterhuman.png" />
+        <img src="images/honeycomb/good-boy.png" />
+        <img src="images/honeycomb/birdstamp.png" />
+        <img src="images/honeycomb/thmoon.png" />
+        <img src="images/honeycomb/galaxypride.png" />
+        <img src="images/honeycomb/bunny.gif" />
+      </div>
+      <h2 style="text-align: center">STAMPS</h2>
+      <div class="stamps">
+        <a
+          href="https://www.deviantart.com/sparklum/art/Portal-Stamp-Blue-209870753"
+          ><img src="stamps/portal1.png"
+        /></a>
+        <a href="https://www.deviantart.com/goku-lover21/art/Spike-3-118147012"
+          ><img src="stamps/spike.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/automaton-heart/art/Notre-Dame-stamp-794089210"
+          ><img src="stamps/notredame.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/mobbostamps/art/STAMP-Sakuya-Izayoi-159222973"
+          ><img src="stamps/sakuya.png"
+        /></a>
+        <a href="https://www.deviantart.com/elfwink/art/No-just-no-916964314"
+          ><img src="stamps/nfts.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/flns/art/Vargskelethor-Vinesauce-Joel-Stamp-619294588"
+          ><img src="stamps/varg.gif"
+        /></a>
+        <a href="https://www.deviantart.com/memeboii/art/007-625762559"
+          ><img src="stamps/cacti.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/skymint-stamps/art/Sylveon-Fan-Stamp-375896106"
+          ><img src="stamps/sylveon.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/mememeupinside/art/the-real-dissapearance-of-hatsune-miku-642670934"
+          ><img src="stamps/rd.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/theysellpizza/art/Drippy-Stamp-920558934"
+          ><img src="stamps/drippy.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/aestheticstamps/art/paw-stamp-2-586236500"
+          ><img src="stamps/paw.png"
+        /></a>
+        <a href="https://www.deviantart.com/keralza/art/Collar-Love-70932456"
+          ><img src="stamps/collar.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/weepingmoth/art/Stamp-Skyrim-269873235"
+          ><img src="stamps/skyrim.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/garetiem/art/I-Love-Dragons-Stamp-71481989"
+          ><img src="stamps/dragons.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/transfeminine/art/Trans-Gay-Stamp-920908360"
+          ><img src="stamps/tgay.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/virtlux/art/Stamp-Danmaku-Is-Power-632501324"
+          ><img src="stamps/danmaku.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/phantompanther/art/DA-Stamp-Rainbow-47767060"
+          ><img src="stamps/rainbow.gif"
+        /></a>
+        <a href="https://www.deviantart.com/pwincessbri/art/Link-Stamp-91833822"
+          ><img src="stamps/toon.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/yukimizuno/art/Stamp-Sgt-Frog-Marching-278336704"
+          ><img src="stamps/frog.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/arandomvelociraptor/art/Stamp-Queer-637218412"
+          ><img src="stamps/queer.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/oceanstamps/art/IT-Pronouns-Stamp-blue-576306897"
+          ><img src="stamps/it.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/lgbtqia-stamps/art/TERF-s-aren-t-welcome-stamp-501951116"
+          ><img src="stamps/noterfs.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/cutesight/art/Stamp-Dreamer-492924549"
+          ><img src="stamps/dreamer.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wishmasteralchemist/art/I-love-Birds-108815362"
+          ><img src="stamps/birds.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/farawayfromyourself/art/smiley-stamp-747500563"
+          ><img src="stamps/smiley.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/sister-of-charity/art/STAMP-mechanical-pencils-77430930"
+          ><img src="stamps/mechanical.jpg"
+        /></a>
+        <a
+          href="https://www.deviantart.com/starrywave/art/Popee-The-Performer-Kedamono-Stamp-648428187"
+          ><img src="stamps/kedamono.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wangqr/art/Meat-Lover-Stamp-327541723"
+          ><img src="stamps/meat.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/kezzi-rose/art/Nightowl-Stamp-411304551"
+          ><img src="stamps/nightowl.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/aestheticstamps/art/flower-stamp-2-575466060"
+          ><img src="stamps/floral.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wishmasteralchemist/art/I-love-Spiders-180719510"
+          ><img src="stamps/spiders.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/boneworks/art/Bioshock-Stamp-152190837"
+          ><img src="stamps/bioshock.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wishmasteralchemist/art/I-love-Rabbits-257527943"
+          ><img src="stamps/rabbits.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/kingdar/art/Yukkuri-Shiteitte-ne-Stamp-147069255"
+          ><img src="stamps/takeiteasy.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/mitochondria-raine/art/Gross-Things-Happenin-To-Me-587818198"
+          ><img src="stamps/body.png"
+        /></a>
+        <a href="https://www.deviantart.com/u-sagi/art/Stamp-Vocaloid-169232857"
+          ><img src="stamps/voca.gif"
+        /></a>
+        <a href="https://www.deviantart.com/youmolide/art/90-663488289"
+          ><img src="stamps/miku.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/candlelit-deco/art/Pastel-Pink-Meow-Stamp-669513692"
+          ><img src="stamps/meow.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/oceanstamps/art/Respect-All-Pronouns-Stamp-512588466"
+          ><img src="stamps/pronouns.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wangqr/art/Kitty-Love-Stamp-549141130"
+          ><img src="stamps/kitty.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/hellanator/art/f2u-Pink-aesthetic-stamp-61-655667508"
+          ><img src="stamps/pen.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/mausergirl/art/Stamp-Cat-Lover-62530307"
+          ><img src="stamps/cat.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/transfeminine/art/Nine-Inch-Nails-The-Downward-Spiral-Stamp-897959521"
+          ><img src="stamps/downward.gif"
+        /></a>
+        <a href="https://www.deviantart.com/bendrill/art/Pet-Stamp-272836000"
+          ><img src="stamps/pet.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/morowhitewolf/art/GO-TEAM-VENTURE-V-76579796"
+          ><img src="stamps/venture.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/darkdisciple-stamps/art/My-Chemical-Romance-I-52946280"
+          ><img src="stamps/mcr.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/zungzwang/art/STAMP-I-Heart-Coffee-198144331"
+          ><img src="stamps/coffee.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/purgatori/art/Protected-by-Vampires-stamp-60943018"
+          ><img src="stamps/pbv.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/oceanstamps/art/Polyamory-Stamp-512838991"
+          ><img src="stamps/poly.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/oceanstamps/art/Protect-LGBTQIA-Kids-Stamp-512937557"
+          ><img src="stamps/protect.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/puff-dahh/art/Furry-Pride-STAMP-154234232"
+          ><img src="stamps/furry.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/mobbostamps/art/STAMP-Cirno-159220627"
+          ><img src="stamps/cirno.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/tranimation-art/art/Stamp-Great-Mouse-Detective-61782905"
+          ><img src="stamps/gmd.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/thecandycoating/art/Sparkle-Waterfall-Stamp-636610709"
+          ><img src="stamps/sparkle.gif"
+        /></a>
+        <a href="https://www.deviantart.com/virus-xenon/art/Virus-752855983"
+          ><img src="stamps/virus.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/ultrathehedgetoaster/art/STAMP-I-support-Missingno-113090903"
+          ><img src="stamps/glitch.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wishmasteralchemist/art/I-love-Ravens-216409392"
+          ><img src="stamps/ravens.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/randomnessrandom/art/F2U-Galaxy-Stamp-686056057"
+          ><img src="stamps/galaxy.png"
+        /></a>
+        <a href="https://www.deviantart.com/sequelle/art/Horror-Stamp-182748508"
+          ><img src="stamps/horror.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/llvampirewitchll/art/Stamp-Bee-F2U-728288458"
+          ><img src="stamps/bee.png"
+        /></a>
+        <a href="https://www.deviantart.com/lynxdesign/art/TV-Stamp-75055566"
+          ><img src="stamps/tv.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/puniplush/art/Peropero-Sparkles-Plush-Stamp-645502505"
+          ><img src="stamps/peropero.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/puniplush/art/Crystal-Pepsi-Logo-Stamp-628687224"
+          ><img src="stamps/crystal.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/kuragami/art/Kemonomimi-Stamp-o2-150807229"
+          ><img src="stamps/kemonomimi.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/apparate/art/Stamp-I-love-reading-books-458099312"
+          ><img src="stamps/reading.gif"
+        /></a>
+        <a href="https://www.deviantart.com/plantbones/art/off-stamp-549886752"
+          ><img src="stamps/off.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/the-last-fallen-ange/art/STAMP-Gumi-Megpoid-157766307"
+          ><img src="stamps/gumi.gif"
+        /></a>
+        <a href="https://www.deviantart.com/babykttn/art/Trans-stamp-630171522"
+          ><img src="stamps/trans.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/kezzi-rose/art/Extraterrestrial-Life-Stamp-411362325"
+          ><img src="stamps/elsewhere.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wishmasteralchemist/art/I-love-Coyotes-120861681"
+          ><img src="stamps/coyotes.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wishmasteralchemist/art/I-love-Deer-172519236"
+          ><img src="stamps/deer.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wishmasteralchemist/art/I-love-Bats-174091125"
+          ><img src="stamps/bats.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/ladyquintessence/art/I-Love-the-Rain-299490981"
+          ><img src="stamps/rain.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/killboxgraphics/art/PC-Gamer-Steam-Stamp-463613090"
+          ><img src="stamps/pcg.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/stampmakerlkj/art/Daydreamer-Stamp-365908170"
+          ><img src="stamps/daydreamer.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/apparate/art/Stamp-I-love-cotton-candy-455261053"
+          ><img src="stamps/cottoncandy.gif"
+        /></a>
+        <a href="https://www.deviantart.com/pixiedust01/art/PS2-Stamp-82152718"
+          ><img src="stamps/ps2.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/loveanimeandcartoons/art/Gengar-Stamp-471621628"
+          ><img src="stamps/gengar2.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/justyoungheroes/art/Halloween-566902092"
+          ><img src="stamps/halloween.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/oktanas/art/I-like-scary-movies-82343614"
+          ><img src="stamps/scary.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/jousan/art/FREE-Arpakasso-Stamp-354788526"
+          ><img src="stamps/alpaca.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/tastypeachstudios/art/Cinnamoroll-Stamp-77076380"
+          ><img src="stamps/cinna.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/wearwolfaa/art/I-Love-Nature-2-76742061"
+          ><img src="stamps/nature.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/tamarac-other/art/Sam-Stamp-request3-667142455"
+          ><img src="stamps/plush.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/plantbones/art/teeth-stamp-540501787"
+          ><img src="stamps/teeth.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/catstam/art/keyboard-stamp-590664917"
+          ><img src="stamps/keys.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/arandomvelociraptor/art/Stamp-Lizard-Titties-637219303"
+          ><img src="stamps/lizard.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/r0se-designs/art/Stamp-I-love-Green-Tea-268259348"
+          ><img src="stamps/greentea.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/faketsuki/art/Song-Stamp-Echo-501129714"
+          ><img src="stamps/echo.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/profiledecor/art/F2U-Pink-Clouds-Stamp-720531765"
+          ><img src="stamps/clouds.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/oceanstamps/art/Otherkin-Stamp-pink-578916045"
+          ><img src="stamps/otherkin.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/clubpenguln/art/click-folders-or-all-713590254"
+          ><img src="stamps/penis.png"
+        /></a>
+        <a href="https://www.deviantart.com/amekin/art/sky-aes-stamp-584937503"
+          ><img src="stamps/sky.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/zmei-kira/art/Sylveon-stamp-641402860"
+          ><img src="stamps/sylveon.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/1nklash/art/nanalan-stamp-7-you-have-won-but-at-what-cost-648316864"
+          ><img src="stamps/germinate.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/oceanstamps/art/Minecraft-Stamp-576321100"
+          ><img src="stamps/minecraft.png"
+        /></a>
+        <a
+          href="https://www.deviantart.com/drxtreme/art/Nintendo-Stamp-71705586"
+          ><img src="stamps/nes.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/simplestamp/art/Calvin-and-hobbes-56847189"
+          ><img src="stamps/calvin.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/sorrystamps/art/gengar-stamp-654775102"
+          ><img src="stamps/gengar.png"
+        /></a>
+        <a href="https://www.deviantart.com/trynnie/art/Stamp-84268103"
+          ><img src="stamps/human.gif"
+        /></a>
+        <a
+          href="https://www.deviantart.com/sparklum/art/Portal-Stamp-Orange-209870758"
+          ><img src="stamps/portal2.png"
+        /></a>
+      </div>
+      <br />
+      <h2 style="text-align: center">BLINKIES</h2>
+      <div id="blinkies">
+        <div class="blinkierow">
+          <img src="blinkies/2FlrTMc.gif" /><img
+            src="blinkies/alien-love-child.gif"
+          /><img src="blinkies/bare-naked-ladies.gif" /><img
+            src="blinkies/batty.gif"
+          /><img src="blinkies/bekind.gif" />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/bite.gif" /><img
+            src="blinkies/blinkiesCafe-Ft.gif"
+          /><img src="blinkies/buffy.gif" /><img src="blinkies/bugs.gif" /><img
+            src="blinkies/cabinet mansss.gif"
+          />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/d7tcu9h.gif" /><img
+            src="blinkies/don't-label-me.gif"
+          /><img src="blinkies/dontlikeit.gif" /><img
+            src="blinkies/fag.gif"
+          /><img src="blinkies/fall.gif" />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/gayppl.gif" /><img
+            src="blinkies/goodboy.gif"
+          /><img src="blinkies/goodsuffering.gif" /><img
+            src="blinkies/happy-halloween.gif"
+          /><img src="blinkies/heathers.gif" />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/i heart shrimp.gif" /><img
+            src="blinkies/i-love-teddy-bears.gif"
+          /><img src="blinkies/interests.gif" /><img
+            src="blinkies/it.gif"
+          /><img src="blinkies/local58.gif" />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/love.gif" /><img src="blinkies/megadeth.gif" /><img
+            src="blinkies/metal.gif"
+          /><img src="blinkies/nine-inch-nails.gif" /><img
+            src="blinkies/neurodiverse.gif"
+          />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/nyaa.gif" /><img src="blinkies/oreos.gif" /><img
+            src="blinkies/pebber.gif"
+          /><img src="blinkies/pepsi-addict.gif" /><img
+            src="blinkies/pink-floyd.gif"
+          />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/placebo.gif" /><img
+            src="blinkies/rammstein.gif"
+          /><img src="blinkies/red-hot-chili-peppers.gif" /><img
+            src="blinkies/renfield.gif"
+          /><img src="blinkies/rightclick.gif" />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/saw.gif" /><img src="blinkies/scream.gif" /><img
+            src="blinkies/sometimes-i-purr.gif"
+          /><img src="blinkies/spiders.gif" /><img
+            src="blinkies/star-trek.gif"
+          />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/tearyouapart.gif" /><img
+            src="blinkies/teatime.gif"
+          /><img src="blinkies/the-exorcist.gif" /><img
+            src="blinkies/transtrophy.gif"
+          /><img src="blinkies/weird-al.gif" />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/wwkiss.gif" /><img src="blinkies/yaoi.gif" /><img
+            src="blinkies/young-frankenstein.gif"
+          /><img src="blinkies/fungal.gif" /><img src="blinkies/bondage.gif" />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/proudcatboy.gif" /><img
+            src="blinkies/gaypride.gif"
+          /><img src="blinkies/daydream.gif" /><img
+            src="blinkies/exclusive.gif"
+          /><img src="blinkies/helena.gif" />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/spike.gif" /><img
+            src="blinkies/self-shipper.gif"
+          /><img src="blinkies/dollar.gif" /><img
+            src="blinkies/golden age.gif"
+          /><img src="blinkies/regress.gif" />
+        </div>
+        <div class="blinkierow">
+          <img src="blinkies/comfnumbb.gif" /><img
+            src="blinkies/mymelo.gif"
+          /><img src="blinkies/trache.gif" /><img
+            src="blinkies/nature.gif"
+          /><img src="blinkies/crawly.gif" />
+        </div>
+      </div>
+      <br />
+      <h2 style="text-align: center">BUTTONS</h2>
+      <div id="buttons">
+        <p>
+          <img src="buttons/dg.png" /><img src="buttons/80s.gif" /><img
+            src="buttons/alien2.gif"
+          /><img src="buttons/antinazi.gif" /><img
+            src="buttons/aol-sucks.gif"
+          />
+        </p>
+        <p>
+          <img src="buttons/besteyes.gif" /><img
+            src="buttons/catscape3.gif"
+          /><img src="buttons/transrights.png" /><img
+            src="buttons/chrome.gif"
+          /><img src="buttons/copy_floppy.gif" />
+        </p>
+        <p>
+          <img src="buttons/css.png" /><img src="buttons/dontyouhate.gif" /><img
+            src="buttons/drpepper.gif"
+          /><img src="buttons/eeveelutions-sylveon.gif" /><img
+            src="buttons/eyes.gif"
+          />
+        </p>
+        <p>
+          <img src="buttons/fireskull.gif" /><img
+            src="buttons/furnow.gif"
+          /><img src="buttons/gay.png" /><img src="buttons/gaybears.gif" /><img
+            src="buttons/getquake.gif"
+          />
+        </p>
+        <p>
+          <img src="buttons/gnu-linux.gif" /><img
+            src="buttons/hatemac_b.gif"
+          /><img src="buttons/it.png" /><img src="buttons/koolaid.gif" /><img
+            src="buttons/everything.gif"
+          />
+        </p>
+        <p>
+          <img src="buttons/linux_powered.gif" /><img
+            src="buttons/madewithneo.gif"
+          /><img src="buttons/microhate.jpg" /><img
+            src="buttons/minecraft.png"
+          /><img src="buttons/neko-b.gif" />
+        </p>
+        <p>
+          <img src="buttons/neocities4life.gif" /><img
+            src="buttons/neocitiespink.gif"
+          /><img src="buttons/nftbutton.gif" /><img
+            src="buttons/nicekid.png"
+          /><img src="buttons/ninnow.gif" />
+        </p>
+        <p>
+          <img
+            src="buttons/openmind.gif"
+            style="width: 88px; height: 31px"
+          /><img src="buttons/osub.gif" /><img src="buttons/parental.gif" /><img
+            src="buttons/passtheshareware.gif"
+          /><img src="buttons/paws.png" />
+        </p>
+        <p>
+          <img src="buttons/pridenoe.gif" /><img
+            src="buttons/puppetcombo.gif"
+          /><img src="buttons/reisen.png" /><img
+            src="buttons/right-to-repair.png"
+          /><img src="buttons/scp.png" />
+        </p>
+        <p>
+          <img src="buttons/transgender.png" /><img
+            src="buttons/w3schools.gif"
+          /><img src="buttons/win10no.gif" /><img
+            src="buttons/wordle-88x31.gif"
+          /><img src="buttons/YaVMOAV.gif" />
+        </p>
+        <p>
+          <img src="buttons/steam.gif" /><img src="buttons/dragcave.png" /><img
+            src="buttons/debian.gif"
+          /><img src="buttons/coco.gif" /><img src="buttons/dreamcast.gif" />
+        </p>
+        <p>
+          <img src="buttons/burninhell.gif" /><img src="buttons/xbox.jpg" /><img
+            src="buttons/copy_floppy.gif"
+          /><img src="buttons/creation.gif" /><img src="buttons/email.gif" />
+        </p>
+        <p>
+          <img src="buttons/meemaw.gif" /><img src="buttons/thetruth.gif" /><img
+            src="buttons/roadkill.gif"
+          /><img src="buttons/zxcert.png" /><img src="buttons/ham.gif" />
+        </p>
+        <p>
+          <img src="buttons/ashens.gif" /><img
+            src="buttons/atomicshrimp.gif"
+          /><img src="buttons/touhou.gif" /><img
+            src="buttons/toebeans_now.gif"
+          /><img src="buttons/tsby.gif" />
+        </p>
+        <p>
+          <img src="buttons/netvamp.gif" /><img
+            src="buttons/superstition.gif"
+          /><img src="buttons/catboy.gif" /><img src="buttons/ma.gif" /><img
+            src="buttons/ps2.gif"
+          />
+        </p>
+      </div>
+      <br />
+    </main>
+  </body>
+</html>
