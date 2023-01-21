@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="style.css" />
 
-    <link rel="icon" href="img/favicon.png" />
+    <link rel="icon" href="favicon.png" />
   </head>
   <style>
     /*
@@ -75,6 +75,27 @@ Each feed item description is displayed in a <p> tag, with the class feed-item-d
     {
       display: none;
     }
+
+    .theme-switcher {
+      display: flex;
+      align-items: center;
+      justify-content: center;      margin: 1em;
+    }
+
+
+    .theme-switcher button{
+      background-color: var(--text);
+      color: var(--bg);
+      padding: .25em;
+      margin: .25em;
+      border: .15em solid var(--pink);
+
+    }
+
+    .theme-switcher button:hover {
+      background-color: var(--bg);
+      color: var(--text);
+    }
   </style>
   <body>
     <header>
@@ -118,7 +139,7 @@ Each feed item description is displayed in a <p> tag, with the class feed-item-d
           about sexual topics and I am not joking when I call myself a
           degenerate. You&#39;ve been warned.
         </p>
-        <p style="text-align:center;margin-bottom:-5%;color:var(--text);font-size:1.25em"><b>Theme Selector</b></p>
+        <p style="text-align:center;color:var(--text);font-size:1.25em"><b>Theme Selector</b></p>
         <div class="theme-switcher">
           <button data-theme="cat" aria-pressed="true">Catppuccin</button>
           <button data-theme="rose" aria-pressed="false">Rose Pine</button>
