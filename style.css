@@ -48,14 +48,12 @@ table {
 }
 
 /* end of css reset */
-
-:root {
+:root,
+[data-selected-theme="cat"] {
     --bg: #1e1e2e;
     --bg-dark: #181825;
     --bg-darker: #11111b;
     --fg: #9399b2;
-    --fg-dark: #7f849c;
-    --fg-darker: #6c7086;
     --mid: #585b70;
     --mid-dark: #45475a;
     --mid-darker: #313244;
@@ -64,6 +62,41 @@ table {
     --blue: #89b4fa;
     --lavender: #b4befe;
 }
+
+[data-selected-theme="rose"] {
+    --bg: #393552;
+    --bg-dark: #2a273f;
+    --bg-darker: #232136;
+    --fg: #908caa;
+    --text: #e0def4;
+    --pink: #ea9a97;
+    --blue: #9ccfd8;
+    --lavender: #c4a7e7;
+}
+
+
+[data-selected-theme="nord"]{
+    --bg: #2e3440;
+    --bg-dark: #3b4252;
+    --bg-darker: #2e3440;
+    --fg: #d8dee9;
+    --text: #d8dee9;
+    --pink: #ebcb8b;
+    --blue: #88c0d0;
+    --lavender: #b48ead;
+}
+
+[data-selected-theme="gruv"]{
+    --bg:  #32302f;
+    --bg-dark: #282828;
+    --bg-darker: #1d2021; 
+    --fg:  #ebdbb2;
+    --text:   #fbf1c7;
+    --pink:  #d3869b;
+    --blue: #83a598;
+    --lavender: #8f3f71;
+}
+
 
 body {
     background-color: var(--bg);
