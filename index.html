@@ -6,6 +6,9 @@
 
     <meta charset="UTF-8" />
 
+<script src="theme.js" async></script>
+
+
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link href="alfarn/alfarn.css" rel="stylesheet" />
     <link href="real-text-pro/real-text-pro.css" rel="stylesheet" />
@@ -85,7 +88,7 @@ Each feed item description is displayed in a <p> tag, with the class feed-item-d
               <li><a href="links.html">LINKS</a></li>
               <li><a href="blog.html">BLOG</a></li>
               <li><a href="writing.html">WRITING</a></li>
-              <li><a href="">PHOTOGRAPHY</a></li>
+              <li><a href="photography.html">PHOTOGRAPHY</a></li>
               <li><a href="misc.html">MISC</a></li>
             </ul>
           </div>
@@ -115,6 +118,13 @@ Each feed item description is displayed in a <p> tag, with the class feed-item-d
           about sexual topics and I am not joking when I call myself a
           degenerate. You&#39;ve been warned.
         </p>
+        <p style="text-align:center;margin-bottom:-5%;color:var(--text);font-size:1.25em"><b>Theme Selector</b></p>
+        <div class="theme-switcher">
+          <button data-theme="cat" aria-pressed="true">Catppuccin</button>
+          <button data-theme="rose" aria-pressed="false">Rose Pine</button>
+          <button data-theme="nord" aria-pressed="false">Nord</button>
+          <button data-theme="gruv" aria-pressed="false">Gruvbox</button>
+        </div>
         <div id="rssfeed">
           <script src="//rss.bloople.net/?url=https%3A%2F%2Fvincentsdungeon.com%2Ffeed.xml&limit=10&showtitle=false&type=js"></script>
         </div>
