@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Vincent's Dungeon</title>
+<link>http://vincentsdungeon.com</link>
+<description>Updates and Blog Posts for Vincent's Dungeon</description>
+<item>
+<title>Luck</title>
+<link>https://vincentsdungeon.com/posts/luck.html</link>
+<guid isPermaLink="false">/posts/luck.html</guid>
+<pubDate>Fri, 20 Jan 2023 00:00:00 EST</pubDate>
+<description>In which I have shit luck</description>
+</item>
+<item>
+<title>Theme Changer</title>
+<link>https://vincentsdungeon.com/index.html</link>
+<guid isPermaLink="false">index.html</guid>
+<pubDate>Wed, 18 Jan 2023 00:00:00 EST</pubDate>
+<description>A Theme Changer for the Site</description>
+</item>
+</channel>
+</rss>
