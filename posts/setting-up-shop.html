@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vincent's Dungeon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="../theme.js" async></script>
+
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="posts.css" />
+  <link rel="icon" href="favicon.png">
+</head>
+<body>
+<div class="blogpage">
+<p id="home" style="text-align:center;"><a href="https://vincentsdungeon.com/blog.html">Go home?</a></p>
+  <h1 class="title">Setting Up Shop</h1>
+  <h3 class="date">September 19th, 2022</h3>
+  <hr />
+  <div class="content">
+    <p>Been a bit of a pain in the ass to get this working, but here we are.</p>
+    <p>I tried all sorts of static site generators like Jekyll and Hugo, but honestly, I just prefer using my own template.</p>
+    <p>I was just getting tired of zonelets, I found it a bit clunky to work with sometimes. Maybe I can steal some code/ideas from that to make this blog work better though.</p>
+    <p>For now, though, here we are.</p>
+    <p>Site is officially switched over to the new host, and here I am.</p>
+    <p>Life has been weird for me lately. Haven't been feeling great emotionally, but have some good stuff going on. I have a major job interview this Friday, which makes me excited and anxious all at once. I'm just glad I got to the interview stage at all, to be honest. That's all I'm going to say, as not to jinx it.</p>
+    <p>What else? Honestly, not much. Been pretty boring. Works been slow as hell. Internet was off all day so we just fucked around. I've been slacking a lot at work, need to get better about that.</p>
+    <p>I got Project Diva Megamix +. Is that news? It is now. Fun, but the keyboard controls are fucking jank. Need to get used to them at some point though.</p> 
+  </div>
+</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
+</body>
+<script>
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
+</script>
+</html>
